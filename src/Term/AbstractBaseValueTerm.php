@@ -25,6 +25,22 @@ abstract class AbstractBaseValueTerm extends AbstractValueTerm implements Evalua
     }
 
     /**
+     * Sets the term value.
+     *
+     * @since [*next-version*]
+     *
+     * @param mixed $value The new term value.
+     *
+     * @return $this This instance.
+     */
+    public function setValue($value)
+    {
+        $this->_setValue($value);
+
+        return $this;
+    }
+
+    /**
      * {@inheritdoc}
      *
      * @since [*next-version*]

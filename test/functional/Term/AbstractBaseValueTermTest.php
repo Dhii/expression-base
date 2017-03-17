@@ -69,6 +69,20 @@ class AbstractBaseValueTermTest extends TestCase
     }
 
     /**
+     * Tests the value setter.
+     *
+     * @since [*next-version*]
+     */
+    public function testSetValue()
+    {
+        $subject = $this->createInstance();
+
+        $subject->this()->_setValue('testing string!');
+
+        $this->assertEquals('testing string!', $subject->this()->value, 'Subject did not correctly set the value internally.');
+    }
+
+    /**
      * Tests the evaluation.
      *
      * @since [*next-version*]
