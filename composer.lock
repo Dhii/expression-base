@@ -97,12 +97,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/espresso-abstract.git",
-                "reference": "b19b17f167cc76def26b19e0d45fb1182fbb7b40"
+                "reference": "a13ebfb0ab0ddb54be80791f25dcb156443f3402"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/espresso-abstract/zipball/b19b17f167cc76def26b19e0d45fb1182fbb7b40",
-                "reference": "b19b17f167cc76def26b19e0d45fb1182fbb7b40",
+                "url": "https://api.github.com/repos/Dhii/espresso-abstract/zipball/a13ebfb0ab0ddb54be80791f25dcb156443f3402",
+                "reference": "a13ebfb0ab0ddb54be80791f25dcb156443f3402",
                 "shasum": ""
             },
             "require": {
@@ -135,7 +135,7 @@
                 "source": "https://github.com/Dhii/espresso-abstract/tree/release/0.1",
                 "issues": "https://github.com/Dhii/espresso-abstract/issues"
             },
-            "time": "2017-03-17 16:00:23"
+            "time": "2017-03-17 16:32:48"
         },
         {
             "name": "dhii/expression-interface",
