@@ -25,16 +25,15 @@ class AbstractBaseValueTermTest extends TestCase
      *
      * @since [*next-version*]
      *
+     * @param mixed $eval The evaluation result.
+     *
      * @return AbstractBaseValueTerm
      */
-    public function createInstance()
+    public function createInstance($eval = null)
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->_evalValue(function($value, $ctx = null) {
-                return $value;
-            })
-            ->_assertContextValid(function($ctx = null) {
-                return true;
+            ->_evaluate(function($ctx = null) use ($eval) {
+                return $eval;
             })
             ->new();
 
@@ -76,7 +75,7 @@ class AbstractBaseValueTermTest extends TestCase
      */
     public function testEvaluate()
     {
-        $subject = $this->createInstance();
+        $subject = $this->createInstance(21);
         $subject->this()->value = 21;
 
         $result = $subject->evaluate();
