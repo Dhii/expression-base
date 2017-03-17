@@ -3,6 +3,7 @@
 namespace Dhii\Expression\FuncTest\Term;
 
 use Dhii\Expression\Term\AbstractBaseValueTerm;
+use Exception;
 use Xpmock\TestCase;
 
 /**
@@ -81,5 +82,29 @@ class AbstractBaseValueTermTest extends TestCase
         $result = $subject->evaluate();
 
         $this->assertEquals(21, $result);
+    }
+
+    public function testCreateEvaluationException()
+    {
+        $subject = $this->createInstance();
+
+        $message   = 'this is a test exception message';
+        $code      = 9;
+        $previous  = new Exception('a previous exception');
+        $exception = $subject->this()->_createEvaluationException($message, $code, $previous);
+
+        $this->assertInstanceof(
+            'Dhii\\Evaluable\\EvaluationExceptionInterface',
+            $exception,
+            'Created exception is not a valid EvaluationExceptionInterface instance.'
+        );
+        $this->assertInstanceof(
+            'Exception',
+            $exception,
+            'Created exception is not a valid Exception instance.'
+        );
+        $this->assertEquals($message, $exception->getMessage(), 'Invalid message for created exception.');
+        $this->assertEquals($code, $exception->getCode(), 'Invalid code for created exception.');
+        $this->assertEquals($previous, $exception->getPrevious(), 'Invalid previous exception for created exception');
     }
 }
