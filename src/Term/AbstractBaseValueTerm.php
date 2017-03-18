@@ -12,7 +12,9 @@ use Exception;
  *
  * @since [*next-version*]
  */
-abstract class AbstractBaseValueTerm extends AbstractValueTerm implements EvaluableInterface, ValueAwareInterface
+abstract class AbstractBaseValueTerm extends AbstractValueTerm implements
+    EvaluableInterface,
+    ValueAwareInterface
 {
     /**
      * {@inheritdoc}
@@ -22,22 +24,6 @@ abstract class AbstractBaseValueTerm extends AbstractValueTerm implements Evalua
     public function getValue()
     {
         return $this->_getValue();
-    }
-
-    /**
-     * Sets the term value.
-     *
-     * @since [*next-version*]
-     *
-     * @param mixed $value The new term value.
-     *
-     * @return $this This instance.
-     */
-    public function setValue($value)
-    {
-        $this->_setValue($value);
-
-        return $this;
     }
 
     /**
