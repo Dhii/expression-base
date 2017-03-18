@@ -52,6 +52,16 @@ class AbstractBaseValueTermTest extends TestCase
         $this->assertInstanceOf(
             static::TEST_SUBJECT_CLASSNAME, $subject, 'Subject is not a valid instance.'
         );
+
+        $this->assertInstanceOf(
+            'Dhii\\Evaluable\\EvaluableInterface',
+            $subject, 'Subject is not a valid instance.'
+        );
+
+        $this->assertInstanceOf(
+            'Dhii\\Data\\ValueAwareInterface',
+            $subject, 'Subject is not a valid instance.'
+        );
     }
 
     /**
